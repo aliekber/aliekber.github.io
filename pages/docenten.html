@@ -1,0 +1,70 @@
+<div class="jumbotron text-center">
+	<h1>Docenten beheren</h1>
+	<div class="col-lg-6">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Search for..." ng-model="searchTerm">
+		</div>
+	</div>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Docentnummer</th>
+				<th>Naam</th>
+				<th>Vakgebied</th>
+                <th>Geeft blok</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<!-- FOREACH item IN items -->
+			<tr ng-repeat="docent in docenten | filter: searchTerm track by $index">
+				<td>
+					<span ng-hide="docent.updating">{{docent.docentnummer}}</span>
+					<input type="text" ng-model="docent.docentnummer" ng-show="docent.updating">
+
+				</td>
+				<td>
+					<span ng-hide="docent.updating">{{docent.naam}}</span>
+					<input type="text" ng-model="docent.naam" ng-show="docent.updating"> 
+				</td>
+				<td>
+					<span ng-hide="docent.updating">{{docent.vakgebied}}</span>
+					<input type="text" ng-model="docent.vakgebied" ng-show="docent.updating">
+				</td>
+                <td>
+                    <span ng-hide="docent.updating">{{docent.geeft}}</span>
+                    <input type="text" ng-model="docent.geeft" ng-show="docent.updating">
+                </td>
+				<td>
+					<button type="button" class="btn btn-success" ng-click="updateItem(docent)" ng-show="docent.updating">Save</button>
+
+					<button type="button" class="btn btn-warning" ng-click="docent.updating=true;" ng-hide="docent.updating">Update</button>
+
+					<button type="button" class="btn btn-danger" ng-click="deleteItem(docent)">Delete</button>
+				</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+	<hr>
+
+	<form>
+		<div class="form-group">
+			<label for="itemInput">Should do item</label>
+			<input type="text" class="form-control" id="itemInput" placeholder="docentnummer" ng-model="newItem.docentnummer">
+			<input type="text" class="form-control" id="itemInput" placeholder="naam" ng-model="newItem.naamDocent">
+			<input type="text" class="form-control" id="itemInput" placeholder="vakgebied" ng-model="newItem.vakgebied">
+		</div>
+		<div class="form-group">
+            <select class="form-control" ng-model="newItem.geeftBlok">
+		  <option ng-repeat="blok in blokken" value="{{blok.periode}}">{{blok.periode}}</option>
+		</select>
+        </div>
+
+		<button id="form-submit" type="submit" class="btn btn-primary" ng-click="saveNewItem()">Save</button>
+	</form>
+
+</div>

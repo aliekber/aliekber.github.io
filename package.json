@@ -1,0 +1,14 @@
+{
+  "name": "hhsproject",
+  "version": "1.0.0",
+  "description": "angular applicatie ",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start test/karma.conf.js",
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "http-server"
+  },
+  "author": "ali ekber guraras",
+  "license": "ISC"
+}

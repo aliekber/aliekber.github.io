@@ -1,0 +1,80 @@
+<div class="jumbotron text-center">
+    <h1>Studenten beheren</h1>
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for..." ng-model="searchTerm">
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Studentnummer</th>
+                <th>Naam</th>
+                <th>Adres</th>
+                <th>Volgt</th>
+                <th>Slb'er</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <!-- FOREACH item IN items -->
+            <tr ng-repeat="student in studenten | filter: searchTerm track by $index">
+                <td>
+                    <span ng-hide="student.updating">{{student.studentnummer}}</span>
+                    <input type="text" ng-model="student.studentnummer" ng-show="student.updating">
+
+                </td>
+                <td>
+                    <span ng-hide="student.updating">{{student.naam}}</span>
+                    <input type="text" ng-model="student.naam" ng-show="student.updating">
+                </td>
+                <td>
+                    <span ng-hide="student.updating">{{student.adres}}</span>
+                    <input type="text" ng-model="student.adres" ng-show="student.updating">
+                </td>
+                <td>
+                    <span ng-hide="student.updating">{{student.volgt}}</span>
+                    <input type="text" ng-model="student.volgt" ng-show="student.updating">
+                </td>
+                <td>
+                    <span ng-hide="student.updating">{{student.slb}}</span>
+                    <input type="text" ng-model="student.slb" ng-show="student.updating">
+                </td>
+                <td>
+                    <button type="button" class="btn btn-success" ng-click="updateItem(student)" ng-show="student.updating">Save</button>
+
+                    <button type="button" class="btn btn-warning" ng-click="student.updating=true;" ng-hide="student.updating">Update</button>
+
+                    <button type="button" class="btn btn-danger" ng-click="deleteItem(student)">Delete</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <hr>
+
+    <form>
+        <div class="form-group">
+            <label for="itemInput">Should do item</label>
+            <input type="text" class="form-control" id="itemInput" placeholder="studentnummer" ng-model="newItem.studentnummer" required>
+            <input type="text" class="form-control" id="itemInput" placeholder="naam" ng-model="newItem.naam">
+            <input type="text" class="form-control" id="itemInput" placeholder="adres" ng-model="newItem.adres">
+        </div>
+        <div class="form-group">
+            <select class="form-control" ng-model="newItem.volgt">
+		  <option ng-repeat="blok in blokken" value="{{blok.periode}}">{{blok.periode}}</option>
+		</select>
+        </div>
+        <div class="form-group">
+            <select class="form-control" ng-model="newItem.slb">
+		  <option ng-repeat="docent in docenten" value="{{docent.naam}}">{{docent.naam}}</option>
+		</select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" ng-click="saveNewItem()">Save</button>
+    </form>
+
+</div>

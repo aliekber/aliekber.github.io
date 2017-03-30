@@ -1,0 +1,30 @@
+<div class="jumbotron text-center">
+	<h1>Overzicht</h1>
+	<div class="col-lg-6">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Search for..." ng-model="searchTerm">
+		</div>
+	</div>
+
+	<table class="table" ng-repeat="blok in blokken track by $index">
+		<thead>
+			<tr>
+				<th>{{blok.periode | blokNaamFilter}}</th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<!-- FOREACH item IN items -->
+			<tr ng-repeat="student in studenten | filter: {volgt: blok.periode} track by $index">
+				<td class="col-md-1">{{student.studentnummer}}</td>
+				<td class="col-md-1">{{student.naam}}</td>
+				<td class="col-md-1">{{student.adres}}</td>
+				<td class="col-md-1">{{student.slb}}</td>
+			</tr>
+
+		</tbody>
+	</table>
+</div>

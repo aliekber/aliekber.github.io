@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="scotchApp">
+
+<head>
+  <!-- SCROLLS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+  <!-- SPELLS -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/controllers/blokkenController.js"></script>
+  <script src="js/controllers/docentenController.js"></script>
+  <script src="js/controllers/errorController.js"></script>
+  <script src="js/controllers/mainController.js"></script>
+  <script src="js/controllers/studentenController.js"></script>
+  <script src="js/filters/filter.js"></script>
+  <script src="factories/loadFactory.js"></script>
+
+</head>
+
+<!-- define angular controller -->
+<body ng-controller="mainController">
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Studenten Overzicht Systeem</a>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#blokken"><i class="glyphicon glyphicon-list-alt"></i> Blokken</a></li>
+        <li><a href="#studenten"><i class="fa fa-comment"></i> Studenten</a></li>
+        <li><a href="#docenten"><i class="glyphicon glyphicon-list-alt"></i> Docenten</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="main">
+  
+    <!-- angular templating -->
+		<!-- this is where content will be injected -->
+    <div ng-view></div>
+    
+  </div>
+  
+  <footer class="text-center">
+    <!-- <p>View the tutorial on <a href="http://scotch.io/tutorials/javascript/single-page-apps-with-angularjs-routing-and-templating">Scotch.io</a></p>
+  
+    <p>View a tutorial on <a href="http://scotch.io/tutorials/javascript/animating-angularjs-apps-ngview">Animating Your Angular Single Page App</a></p> -->
+    <p>Blok H AngularJS bouwen project</p>
+    <p>Copyright © 2017 Ali Ekber Guraras</p>
+  </footer>
+  
+</body>
+
+</html>
