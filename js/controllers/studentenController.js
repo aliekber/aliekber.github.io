@@ -17,15 +17,15 @@ scotchApp.controller('studentenController', function ($scope, LoadFactory) {
     }
     else {
         $scope.studenten = [
-            { studentnummer: "1", naam: "Klaas", adres: "Dorpstraat 33" },
-            { studentnummer: "2", naam: "Klaas", adres: "Dorpstraat 33" },
-            { studentnummer: "3", naam: "Klaas", adres: "Dorpstraat 33" },
-            { studentnummer: "4", naam: "Klaas", adres: "Dorpstraat 33" },
-            { studentnummer: "5", naam: "Klaas", adres: "Dorpstraat 33" },
-            { studentnummer: "6", naam: "Klaas", adres: "Dorpstraat 33" },
-            { studentnummer: "7", naam: "Klaas", adres: "Dorpstraat 33" },
-            { studentnummer: "8", naam: "Klaas", adres: "Dorpstraat 33" },
-            { studentnummer: "9", naam: "Klaas", adres: "Dorpstraat 33" }
+            { studentnummer: "1", naam: "Piet", adres: "Dorpstraat 33", volgt: "A", slb: "Arno" },
+            { studentnummer: "2", naam: "Klaas", adres: "Dorpstraat 33", volgt: "B", slb: "Rob" },
+            { studentnummer: "3", naam: "Jan", adres: "Dorpstraat 33", volgt: "C", slb: "Dominic" },
+            { studentnummer: "4", naam: "Willem", adres: "Dorpstraat 33", volgt: "D", slb: "Henk" },
+            { studentnummer: "5", naam: "Kevin", adres: "Dorpstraat 33", volgt: "C", slb: "Arno" },
+            { studentnummer: "6", naam: "Robert", adres: "Dorpstraat 33", volgt: "F", slb: "Klaas" },
+            { studentnummer: "7", naam: "Ashwin", adres: "Dorpstraat 33", volgt: "A", slb: "Willem" },
+            { studentnummer: "8", naam: "Tamim", adres: "Dorpstraat 33", volgt: "B", slb: "Dominic" },
+            { studentnummer: "9", naam: "Sha", adres: "Dorpstraat 33", volgt: "B", slb: "Rob" }
         ];
         localStorage.setItem("studenten", JSON.stringify($scope.studenten));
     }

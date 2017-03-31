@@ -20,24 +20,24 @@
 
 			<!-- FOREACH item IN items -->
 			<tr ng-repeat="docent in docenten | filter: searchTerm track by $index">
-				<td>
+				<td class="col-md-1">
 					<span ng-hide="docent.updating">{{docent.docentnummer}}</span>
 					<input type="text" ng-model="docent.docentnummer" ng-show="docent.updating">
 
 				</td>
-				<td>
+				<td class="col-md-1">
 					<span ng-hide="docent.updating">{{docent.naam}}</span>
 					<input type="text" ng-model="docent.naam" ng-show="docent.updating"> 
 				</td>
-				<td>
+				<td class="col-md-1">
 					<span ng-hide="docent.updating">{{docent.vakgebied}}</span>
 					<input type="text" ng-model="docent.vakgebied" ng-show="docent.updating">
 				</td>
-                <td>
+                <td class="col-md-1">
                     <span ng-hide="docent.updating">{{docent.geeft}}</span>
                     <input type="text" ng-model="docent.geeft" ng-show="docent.updating">
                 </td>
-				<td>
+				<td class="col-md-1">
 					<button type="button" class="btn btn-success" ng-click="updateItem(docent)" ng-show="docent.updating">Save</button>
 
 					<button type="button" class="btn btn-warning" ng-click="docent.updating=true;" ng-hide="docent.updating">Update</button>

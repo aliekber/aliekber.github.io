@@ -19,20 +19,20 @@
 
 			<!-- FOREACH item IN items -->
 			<tr ng-repeat="blok in blokken | filter: searchTerm track by $index">
-				<td>
+				<td class="col-md-1">
 					<span ng-hide="blok.updating">{{blok.periode}}</span>
 					<input type="text" ng-model="blok.periode" ng-show="blok.updating">
 
 				</td>
-				<td>
+				<td class="col-md-1">
 					<span ng-hide="blok.updating">{{blok.omschrijving}}</span>
 					<input type="text" ng-model="blok.omschrijving" ng-show="blok.updating"> 
 				</td>
-				<td>
+				<td class="col-md-1">
 					<span ng-hide="blok.updating">{{blok.jaar}}</span>
 					<input type="text" ng-model="blok.jaar" ng-show="blok.updating">
 				</td>
-				<td>
+				<td class="col-md-1">
 					<button type="button" class="btn btn-success" ng-click="updateItem(blok)" ng-show="blok.updating">Save</button>
 
 					<button type="button" class="btn btn-warning" ng-click="blok.updating=true;" ng-hide="blok.updating">Update</button>

@@ -12,15 +12,15 @@ scotchApp.controller('docentenController', function ($scope, LoadFactory) {
     }
     else {
         $scope.docenten = [
-            { docentnummer: "1", naam: "Pietjes", vakgebied: "Greenfoot" },
-            { docentnummer: "2", naam: "Pietjes", vakgebied: "Java" },
-            { docentnummer: "3", naam: "Pietjes", vakgebied: "C#" },
-            { docentnummer: "4", naam: "Pietjes", vakgebied: "Java" },
-            { docentnummer: "5", naam: "Pietjes", vakgebied: "Applicatiebeheer" },
-            { docentnummer: "6", naam: "Pietjes", vakgebied: "Prince2" },
-            { docentnummer: "7", naam: "Pietjes", vakgebied: "vakgebied" },
-            { docentnummer: "8", naam: "Pietjes", vakgebied: "AngularJS" },
-            { docentnummer: "9", naam: "Pietjes", vakgebied: "Onderzoek" }
+            { docentnummer: "1", naam: "Pietjes", vakgebied: "Greenfoot", geeft: "A" },
+            { docentnummer: "2", naam: "Kees", vakgebied: "Java", geeft: "B" },
+            { docentnummer: "3", naam: "Willen", vakgebied: "C#", geeft: "C" },
+            { docentnummer: "4", naam: "Henk", vakgebied: "Java", geeft: "D" },
+            { docentnummer: "5", naam: "Vincent", vakgebied: "Applicatiebeheer", geeft: "E" },
+            { docentnummer: "6", naam: "Arno", vakgebied: "Prince2", geeft: "F" },
+            { docentnummer: "7", naam: "Dominic", vakgebied: "vakgebied", geeft: "G" },
+            { docentnummer: "8", naam: "Ad", vakgebied: "AngularJS", geeft: "H" },
+            { docentnummer: "9", naam: "Rob", vakgebied: "Onderzoek", geeft: "I" }
         ];
         localStorage.setItem("docenten", JSON.stringify($scope.docenten));
     }
